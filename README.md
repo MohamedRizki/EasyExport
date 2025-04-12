@@ -1,69 +1,52 @@
-# README
+# EasyExport Algorithm
 
-## EasyExport Algorithm
+## Description :
+`EasyExportAlgorithm` is a Python script developed by **Mohamed RIZKI**, a second-year engineering student.  
+It’s a handy tool that allows you to **automatically export map pages as PDF files** using predefined layouts in a **QGIS** project.
 
-### Description
-Le script `EasyExportAlgorithm` a été développé par Mohamed RIZKI, étudiant en 2ème année cycle ingénieur. Ce script permet d'exporter des plans en PDF en utilisant les layouts définis dans un projet QGIS. Il permet de sélectionner un layout, une couche à exclure, de définir les recouvrements horizontaux et verticaux, et de spécifier le chemin d'exportation.
+With it, you can:
+- Select a layout from your QGIS project
+- Exclude a layer (e.g., a base map like OSM)
+- Set **horizontal and vertical overlaps**
+- Choose the export path for the generated PDFs
 
-### Prérequis
+## Requirements
 
-1. **QGIS** : Assurez-vous d'avoir QGIS installé (version 3.10 ou supérieure).
-2. **Script Python** : Vous aurez besoin du script Python `EasyExportAlgorithm.py`.
+- **QGIS** (version 3.10 or higher)
+- `EasyExportAlgorithm.py` script
 
-### Installation
+## Installation :
 
-1. **Télécharger le script** : Téléchargez le script `EasyExportAlgorithm.py` et placez-le dans un répertoire de votre choix.
-2. **Ouvrir QGIS** : Lancez QGIS.
-3. **Charger le script** : Ouvrez votre script dans QGIS et exécutez-le.
+1. Download the `EasyExportAlgorithm.py` script and save it wherever you like
+2. Open **QGIS**
+3. Load the script in QGIS’s Python editor and run it
 
-### Utilisation
+## How to Use :
 
-Une fois le script chargé, exécutez-le. Voici les étapes pour utiliser le script :
+Once the script is running, it will ask you for a few simple parameters:
 
-### Paramètres de l'algorithme
+### Algorithm Parameters :
 
-1. **Sélectionner un Layout** :
-   - **Description** : Choisissez un layout parmi ceux définis dans votre projet QGIS.
-   - **Type** : Liste déroulante.
-   - **Optionnel** : Non.
+| Parameter | Description | Type | Required |
+|----------|-------------|------|----------|
+| **Layout** | Choose a layout from your QGIS project | Dropdown list | ✅ Yes |
+| **Layer to exclude** | Exclude a layer from extent calculation (e.g., base maps) | Layer selection | ❌ Optional |
+| **Horizontal overlap (%)** | Overlap between exported pages (horizontal) | Numeric | ❌ Optional (default: 0) |
+| **Vertical overlap (%)** | Overlap between exported pages (vertical) | Numeric | ❌ Optional (default: 0) |
+| **Export path** | Where to save the exported PDF files | File destination (PDF) | ✅ Yes |
 
-2. **Couche à ne pas prendre en compte (Optionnel)** :
-   - **Description** : Sélectionnez une couche à exclure du calcul de l'étendue visible. Cela est particulièrement utile pour exclure des fonds de carte comme OpenStreetMap, car leur inclusion peut entraîner la génération de plans vides et blancs.
-   - **Type** : Sélection de couche.
-   - **Optionnel** : Oui.
+## Output Example :
 
-3. **Recouvrement Horizontal (%)** :
-   - **Description** : Définissez le pourcentage de recouvrement horizontal entre les plans exportées.
-   - **Type** : Numérique (pourcentage).
-   - **Optionnel** : Oui.
-   - **Valeur par défaut** : 0.
+When you run the algorithm, it:
 
-4. **Recouvrement Vertical (%)** :
-   - **Description** : Définissez le pourcentage de Recouvrement vertical entre les plans exportées.
-   - **Type** : Numérique (pourcentage).
-   - **Optionnel** : Oui.
-   - **Valeur par défaut** : 0.
+1. Calculates the dimensions of the selected layout
+2. Computes the visible extent of layers (excluding the chosen layer)
+3. Splits the extent into multiple rectangles based on layout size and overlaps
+4. Exports each rectangle as a **separate PDF file** using the selected layout
 
-5. **Chemin d'exportation** :
-   - **Description** : Spécifiez le chemin d'exportation pour les fichiers PDF générés. Chaque fichier sera nommé avec un suffixe indiquant son numéro de page.
-   - **Type** : Destination de fichier (PDF).
-   - **Optionnel** : Non.
-
-### Exemple de sortie
-
-Lorsque vous exécutez l'algorithme, il :
-
-1. Calcule les dimensions du layout sélectionné.
-2. Calcule l'étendue visible des couches dans le projet QGIS, en excluant la couche spécifiée.
-3. Divise cette étendue en plusieurs rectangles en fonction des dimensions du layout et des recouvrements spécifiés.
-4. Exporte chaque rectangle en tant que fichier PDF distinct, en utilisant le layout sélectionné.
-
-### Remarques
-
-- Assurez-vous que les couches à inclure dans l'étendue visible sont activées (visibles) dans le projet QGIS.
-- Le recouvrement permet d'assurer une continuité visuelle entre les plans exportées.
-- Les fichiers PDF exportés seront nommés avec un suffixe numérique pour indiquer leur ordre (par exemple, `export_path_1.pdf`, `export_path_2.pdf`, etc.).
-
-### Contact
-
-Pour toute question ou suggestion, vous pouvez me contacter par mail : Mohamedrizki07@gmail.com
+Example output filenames:
+```bash
+export_path_1.pdf  
+export_path_2.pdf  
+export_path_3.pdf  
+...
