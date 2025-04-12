@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Script développé par Mohamed RIZKI, étudiant en 2ème année cycle ingénieur.
-Description : Ce script permet de sélectionner un layout, une couche (layer), et de spécifier les dimensions de zoom ainsi que le chemin d'exportation.
+Script developed by Mohamed RIZKI
+Description: This script allows you to select a layout, a layer, and specify the zoom dimensions as well as the export path
 """
 
 from qgis.core import (
