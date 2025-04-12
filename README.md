@@ -29,11 +29,11 @@ Once the script is running, it will ask you for a few simple parameters:
 
 | Parameter | Description | Type | Required |
 |----------|-------------|------|----------|
-| **Layout** | Choose a layout from your QGIS project | Dropdown list | ✅ Yes |
-| **Layer to exclude** | Exclude a layer from extent calculation (e.g., base maps) | Layer selection | ❌ Optional |
-| **Horizontal overlap (%)** | Overlap between exported pages (horizontal) | Numeric | ❌ Optional (default: 0) |
-| **Vertical overlap (%)** | Overlap between exported pages (vertical) | Numeric | ❌ Optional (default: 0) |
-| **Export path** | Where to save the exported PDF files | File destination (PDF) | ✅ Yes |
+| **Layout** | Choose a layout from your QGIS project | Dropdown list | Yes |
+| **Layer to exclude** | Exclude a layer from extent calculation (e.g., base maps) | Layer selection | Optional |
+| **Horizontal overlap (%)** | Overlap between exported pages (horizontal) | Numeric | Optional (default: 0) |
+| **Vertical overlap (%)** | Overlap between exported pages (vertical) | Numeric | Optional (default: 0) |
+| **Export path** | Where to save the exported PDF files | File destination (PDF) | Yes |
 
 ## Output Example :
 
@@ -50,3 +50,5 @@ export_path_1.pdf
 export_path_2.pdf  
 export_path_3.pdf  
 ...
+
+Contact : Mohamedrizki07@gmail.com
