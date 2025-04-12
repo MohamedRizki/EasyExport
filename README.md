@@ -49,8 +49,6 @@ Example output filenames:
 export_path_1.pdf  
 export_path_2.pdf  
 export_path_3.pdf  
-...
-
-
+```
 
 Contact : Mohamedrizki07@gmail.com
