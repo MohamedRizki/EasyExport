@@ -67,7 +67,3 @@ Lorsque vous exécutez l'algorithme, il :
 ### Contact
 
 Pour toute question ou suggestion, vous pouvez me contacter par mail : Mohamedrizki07@gmail.com
-
----
-
-Ce document vous guide à travers l'utilisation du script `EasyExportAlgorithm.py`, vous permettant d'exporter efficacement des plans à partir de vos projets QGIS en utilisant des layouts définis.
